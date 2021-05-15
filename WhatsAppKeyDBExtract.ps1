@@ -55,7 +55,7 @@ If ($apkflen -eq 18329558)
 {
 $apkfurl = "http://www.cdn.whatsapp.net/android/2.11.431/WhatsApp.apk"
 } Else {
-$apkfurl = "http://whatcrypt.com/WhatsApp-2.11.431.apk"
+$apkfurl = "https://whatcrypt.com/WhatsApp-2.11.431.apk"
 }
 "`r`nWhatsApp $version installed`r`n"
 If (Test-Path "tmp\LegacyWhatsApp.apk")
