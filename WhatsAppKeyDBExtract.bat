@@ -47,7 +47,7 @@ set apkflen=%apkflen:Content-Length: =%
 if %apkflen% == 18329558 (
 	set apkfurl=http://www.cdn.whatsapp.net/android/2.11.431/WhatsApp.apk
 ) else (
-	set apkfurl=http://whatcrypt.com/WhatsApp-2.11.431.apk
+	set apkfurl=https://whatcrypt.com/WhatsApp-2.11.431.apk
 )
 set /p apkpath=<tmp\wapath.txt
 set /p sdpath=<tmp\sdpath.txt

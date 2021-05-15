@@ -57,7 +57,7 @@ apkflen=$(curl -sI http://www.cdn.whatsapp.net/android/2.11.431/WhatsApp.apk | g
 if [ $apkflen -eq 18329558 ]; then
 apkfurl=http://www.cdn.whatsapp.net/android/2.11.431/WhatsApp.apk
 else
-apkfurl=http://whatcrypt.com/WhatsApp-2.11.431.apk
+apkfurl=https://whatcrypt.com/WhatsApp-2.11.431.apk
 fi
 apkname=$(basename  ${apkpath/package:/})
 if [ ! -f tmp/LegacyWhatsApp.apk ]; then
