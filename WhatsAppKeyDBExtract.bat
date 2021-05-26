@@ -17,6 +17,7 @@ echo =========================================================================
 echo.
 if not exist bin (
 	echo Unable to locate the bin directory! Did you extract all the files from the & echo archive ^(maintaining structure^) and are you running from that directory?
+	pause
 	goto exit
 )
 
@@ -34,6 +35,7 @@ if %sdkver% leq 13 (
 	echo.
 	echo Cleaning up temporary files ...
 	del tmp\sdkver.txt /s /q
+	pause
 	goto exit
 )
 
@@ -77,7 +79,9 @@ for %%A in (tmp\wapath.txt) do if %%~zA==0 (
 		echo Legacy application can't be directly installed on Android 7.0+
 		set /p base=" Do you want to restore previous WhatsApp version (Y/N)? "
 		echo.
-		if /i "!base!" == "N" goto exit
+		if /i "!base!" == "N" (
+			pause
+			goto exit
 		if /i "!base!" == "Y" (
 			echo Restoring WhatsApp previous version
 			if %sdkver% geq 17 (
@@ -87,6 +91,7 @@ for %%A in (tmp\wapath.txt) do if %%~zA==0 (
 			)
 			echo Restore complete
 			echo Please restart the script
+			pause
 			goto exit
 		) else (
 			echo Unsupported option
@@ -163,8 +168,10 @@ if %versionName% gtr 2.11.431 (
 		set currentversion=%%v
 	)
 	if %versionName% equ 2.11.431 (
-		echo Legacy WhatsApp correctly downgraded
+		echo WhatsApp correctly downgraded
 	) else (
+		Echo Whatsapp has not been correctly downgraded. Please try again
+		pause
 		goto exit
 	)
 ) else (
